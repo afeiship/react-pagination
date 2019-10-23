@@ -69,3 +69,4 @@ npm install -S afeiship/react-pagination
 
 ## documentation
 - https://afeiship.github.io/react-pagination/
+- https://github.com/facebook/jest/tree/master/examples/react-testing-library

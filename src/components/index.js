@@ -119,7 +119,8 @@ export default class extends Component {
           </button>
         </div>
         <div className={`${CLASS_NAME}__statistics`}>
-          Pages: {_value} / {this.page}
+          Pages: <span className="is-current">{_value}</span>/
+          <span className="is-total">{this.page}</span>
         </div>
       </nav>
     );
