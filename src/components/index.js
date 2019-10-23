@@ -28,16 +28,6 @@ export default class extends Component {
   };
   /*===properties end===*/
 
-  static getDerivedStateFromProps(inNextProps, inPreviousState) {
-    const { value } = inNextProps;
-    const _value = inPreviousState.value;
-    // if (value !== _value) {
-    //   return { value: _value };
-    // }
-    console.log('getDerivedStateFromProps value, _value:', value, _value);
-    return null;
-  }
-
   constructor(inProps) {
     super(inProps);
     this.state = {
@@ -87,7 +77,7 @@ export default class extends Component {
     const { value: propsValue } = this.props;
     const { value } = this.state;
     if (nextValue !== propsValue && nextValue !== value) {
-      this.setState({ value: nextValue });
+      this.change(nextValue);
     }
     return value !== inNextState.value;
   }
@@ -95,7 +85,7 @@ export default class extends Component {
   render() {
     const { className, total, ...props } = this.props;
     const _value = this.state.value;
-    console.log('render _value', _value);
+
     return (
       <nav
         data-component={CLASS_NAME}
