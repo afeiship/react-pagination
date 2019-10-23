@@ -11,6 +11,8 @@ body,
 }
 
 @import "@/components/style.scss";
+@import "node_modules/react-highlight/dist/style.scss";
+@import "node_modules/highlight.js/scss/atom-one-dark.scss";
 
 .app-container {
   padding: 50px;
@@ -41,5 +43,9 @@ body,
     &:focus {
       outline: none;
     }
+  }
+
+  .react-highlight{
+    margin: 20px auto;
   }
 }

@@ -50,6 +50,8 @@
     "jest": "^24.5.0",
     "prettier": "^1.16.4",
     "rake-git": "github:afeiship/rake-git",
+    "raw-loader": "^3.1.0",
+    "react-highlight": "github:afeiship/react-highlight",
     "react-testing-library": "^6.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",

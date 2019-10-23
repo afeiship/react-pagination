@@ -1,6 +1,7 @@
 import ReactPagination from '../src/main';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import ReactHighlight from 'react-highlight';
 import './assets/style.scss';
 
 class App extends React.Component {
@@ -40,6 +41,9 @@ class App extends React.Component {
           </button>
         </div>
         <ReactPagination value={this.state.value} onChange={this._onChange} />
+        <ReactHighlight lang="js">
+          {require('!!raw-loader!./index.js').default}
+        </ReactHighlight>
       </div>
     );
   }
