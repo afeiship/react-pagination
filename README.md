@@ -16,35 +16,56 @@ npm install -S afeiship/react-pagination
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactPagination from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactPagination from 'react-pagination';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    constructor(inProps) {
+      super(inProps);
+      this.state = {
+        value: 1
+      };
+      this._value = null;
+    }
+
+    _onChange = (inEvent) => {
+      const { value } = inEvent.target;
+      console.log('value:->', value);
+    };
+
+    _onValueChange = (inEvent) => {
+      const { value } = inEvent.target;
+      this._value = parseInt(value);
+    };
+
+    _onClick = (inEvent) => {
+      console.log('this._value', this._value);
+      this.setState({
+        value: this._value
+      });
+    };
+
+    render() {
       return (
-        <ReactPagination />
-      )
+        <div className="app-container">
+          <div className="row">
+            <label htmlFor="tst">ChangePage</label>
+            <input type="text" name="" id="tst" onChange={this._onValueChange} />
+            <button className="button" onClick={this._onClick}>
+              Change
+            </button>
+          </div>
+          <ReactPagination value={this.state.value} onChange={this._onChange} />
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
+
   ```
 
 ## documentation
 - https://afeiship.github.io/react-pagination/
-
-## resources
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
-
-## todos
-- [ ] Add: semver number for every build files.
-- [ ] Add: need output css files.
-- [ ] Add: PWA support for docs.
-- [ ] Add: source.map file for dist(`you can upload for production debug`).
-- [ ] BUG: npm run dev will clean dist.

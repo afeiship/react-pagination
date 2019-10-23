@@ -20,7 +20,6 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    value: null,
     size: 10,
     value: 1,
     total: 108,
