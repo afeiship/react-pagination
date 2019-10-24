@@ -1,10 +1,6 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from 'react-testing-library';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import ReactPagination from '../src/main';
-
-configure({ adapter: new Adapter() });
 
 describe('Basic Test', () => {
   test('Total should be the ceil value 112/10 => 12', () => {
